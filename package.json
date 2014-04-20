@@ -1,0 +1,21 @@
+{
+  "name": "m",
+  "version": "0.0.0",
+  "description": "JavaScript models to use on the server and in the browser",
+  "main": "m.js",
+  "scripts": {
+    "test": "node_modules/.bin/nodeunit test/**/*.js"
+  },
+  "keywords": [
+    "model",
+    "collection"
+  ],
+  "author": "Aziz Yuldashev <yuldoshev.aziz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodeunit": "^0.8.6"
+  },
+  "dependencies": {
+    "underscore": "^1.6.0"
+  }
+}
