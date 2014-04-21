@@ -2,10 +2,15 @@ var _ = require('underscore');
 var Model = require('../../m').Model;
 var Collection = require('../../m').Collection;
 
+var events = require('../../plugins/events');
+
 module.exports = {
     setUp: function(done) {
         var Song = Model.extend({});
         var Album = Collection.extend({});
+
+        Song.use(events);
+        Album.use(events);
 
         this.album = new Album();
         this.song = new Song().set({
