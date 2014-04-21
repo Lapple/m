@@ -11,6 +11,7 @@
     "collection"
   ],
   "author": "Aziz Yuldashev <yuldoshev.aziz@gmail.com>",
+  "repository": "git@github.com:Lapple/m.git",
   "license": "MIT",
   "devDependencies": {
     "nodeunit": "^0.8.6"
