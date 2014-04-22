@@ -1,8 +1,9 @@
 var _ = require('underscore');
+var m = require('../../m');
 var Events = require('./events');
 
-var Model = require('../../m').Model;
-var Collection = require('../../m').Collection;
+var Model = m.Model;
+var Collection = m.Collection;
 
 module.exports = function(Class) {
     _.extend(Class.prototype, Events, {
