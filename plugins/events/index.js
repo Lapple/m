@@ -57,6 +57,7 @@ module.exports = function(Class) {
 
         if (model && this instanceof Collection) {
             this.trigger('remove', model, this);
+            return model;
         }
     });
 };
