@@ -2,7 +2,7 @@ var _ = require('underscore');
 
 module.exports = function(mask) {
     var _store = {};
-    var _getKey = _.partial(getKey, mask);
+    var _getKey = getKey.bind(null, _.clone(mask));
 
     return function(Class) {
         Class.wrap('initialize', function(fn, params) {
@@ -15,6 +15,7 @@ module.exports = function(mask) {
 
                 _store[key] = this;
                 this._key = key;
+                this.params = _.clone(params);
             }
         });
 
@@ -32,7 +33,7 @@ module.exports = function(mask) {
 
 function getKey(mask, params) {
     return _.reduce(params, function(memo, value, key) {
-        if (_.has(mask, key)) {
+        if (mask.hasOwnProperty(key)) {
             return memo + (key + '=' + value + '&');
         }
 
